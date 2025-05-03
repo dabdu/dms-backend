@@ -37,6 +37,7 @@ import { Department } from './department/entities/department.entity/department.e
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
       csrfPrevention: false,
+      playground: true,
     }),
     UsersModule,
     AuthModule,
