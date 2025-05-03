@@ -1,0 +1,71 @@
+mutation Login {
+  login(
+    loginInput: {
+      username: "admin",
+      password: "admin123"
+    }
+  )
+}
+# 🚀 Create Parent Department without SubDepartment
+mutation {
+  createDepartment(input: {
+    name: "IT",
+  }) {
+    id
+    name
+  }
+}
+# 🚀 Create a Department with Sub-Departments
+mutation {
+  createDepartment(input: {
+    name: "HR",
+    subDepartments: [
+      { name: "Recruitment" },
+      { name: "Employee Relations" }
+    ]
+  }) {
+    id
+    name
+    subDepartments {
+      id
+      name
+    }
+  }
+}
+# 🚀 Create SubDepartment under Existing Department
+mutation {
+  createSubDepartment(parentId: 1, name: "Taxation") {
+    id
+    name
+    parent {
+      id
+      name
+    }
+  }
+}
+
+# 🚀 Read All Departments (including sub-departments)
+query {
+  getDepartments {
+    id
+    name
+    subDepartments {
+      id
+      name
+    }
+  }
+}
+# ✏️ Update a Department
+mutation {
+  updateDepartment(input: {
+    id: 1,
+    name: "Finance & Accounting"
+  }) {
+    id
+    name
+  }
+}
+# ❌ Delete a Department
+mutation DeleteDepartment {
+  deleteDepartment(id: 6)
+}
