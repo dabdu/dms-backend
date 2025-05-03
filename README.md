@@ -32,7 +32,7 @@ Use the following credentials to log in:
 
 You can use the frontend client to interact with this API:
 
-- **Frontend URL:** [http://localhost:3001](http://localhost:3001) or your deployed frontend link.
+- **Frontend URL:** https://dms-frontend-roan.vercel.app
 
 ---
 
