@@ -61,9 +61,9 @@ npm run build
 Add a `.env` file with:
 
 ```env
+DATABASE_URL=postgresql://dmsdb_owner:npg_REi50dKwDqax@ep-tight-forest-a4yix1bh-pooler.us-east-1.aws.neon.tech/dmsdb?sslmode=require
 JWT_SECRET=supersecret
 JWT_EXPIRES_IN=7d
-DATABASE_URL=postgresql://dmsdb_owner:npg_REi50dKwDqax@ep-tight-forest-a4yix1bh-pooler.us-east-1.aws.neon.tech/dmsdb?sslmode=require
 ```
 
 ### 4. Run the App
