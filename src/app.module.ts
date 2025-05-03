@@ -26,7 +26,7 @@ import { Department } from './department/entities/department.entity/department.e
         entities: [User, Department],
         synchronize: true,
         ssl: {
-          rejectUnauthorized: false, // Important for services like Neon with SSL
+          rejectUnauthorized: false,
         },
       }),
 
