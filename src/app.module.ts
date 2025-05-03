@@ -36,6 +36,7 @@ import { Department } from './department/entities/department.entity/department.e
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
+      csrfPrevention: false,
     }),
     UsersModule,
     AuthModule,
