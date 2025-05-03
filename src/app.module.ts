@@ -22,14 +22,14 @@ import { Department } from './department/entities/department.entity/department.e
       imports: [ConfigModule],
       useFactory: (config: ConfigService) => ({
         type: 'postgres',
-        host: config.get<string>('DB_HOST'),
-        port: parseInt(config.get<string>('DB_PORT', '5432')),
-        username: config.get<string>('DB_USER'),
-        password: config.get<string>('DB_PASS'),
-        database: config.get<string>('DB_NAME'),
+        url: config.get<string>('DATABASE_URL'),
         entities: [User, Department],
         synchronize: true,
+        ssl: {
+          rejectUnauthorized: false, // Important for services like Neon with SSL
+        },
       }),
+
       inject: [ConfigService],
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
